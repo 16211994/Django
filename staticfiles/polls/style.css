@@ -1,0 +1,10 @@
+
+li a {
+    color: green;
+}
+/* In your style.css */
+body {
+    background: white url("{% static 'images/bg1.png' %}") no-repeat;
+} 
+
+
