@@ -3,8 +3,10 @@ li a {
     color: green;
 }
 /* In your style.css */
+/* body {
+    background: white url("/static/polls/images/bg1.png") no-repeat;
+} */
 body {
-    background: white url("{% static 'images/bg1.png' %}") no-repeat;
-} 
-
-
+    background: url("/static/polls/images/bg1.png") no-repeat;
+    background-size: cover; /* Adjusts the image to cover the entire body */
+}
