@@ -1,18 +1,11 @@
 
-{% extends 'polls/base.html' %}
-
-<!-- {% block content %}
-    <h1>Welcome to the Polls Home Page</h1>
-{% endblock %}
- -->
-
-
-
+ {% extends 'polls/base.html' %}
 
 {% block title %}Homepage{% endblock %}
 
 {% block main %}
 <div class="row">
+    <h1>Welcome to the Polls Home Page</h1>
     <div class="col-lg-8 col-lg-offset-2">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -21,26 +14,52 @@
 
             <ul class="list-group">
                 <li class="list-group-item">
-                    <strong><ul>
-                        {% for question in latest_question_list %}
-                        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-                        {% endfor %}
+                    <strong><h1>Questions and Choices</h1>
+                        <ul>
+                            {% for question in questions %}
+                                <li>
+                                    <strong>{{ question.question_text }}</strong>
+                                    <ul>
+                                        {% for choice in question.choice_set.all %}
+                                            <li>{{ choice.choice_text }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </ul></strong>
                     <span class="pull-right">
                         <a href="#" class="btn btn-info btn-xs">Vote</a> &nbsp;
                         <a href="#" class="btn btn-default btn-xs">View Results</a> &nbsp;
                     </span>
                 </li>
-                <li class="list-group-item">
-                    <strong>Which operating system do you use?</strong>
-                    <span class="pull-right">
-                        <a href="#" class="btn btn-info btn-xs">Vote</a> &nbsp;
-                        <a href="#" class="btn btn-default btn-xs">View Results</a> &nbsp;
-                    </span>
-                </li>
+                
             </ul>
 
         </div>
     </div>
 </div>
-{% endblock %}
+{% endblock %} -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polls</title>
+</head>
+<body>
+    <h1>Questions and Choices</h1>
+    <ul>
+        {% for question in questions %}
+            <li>
+                <strong>{{ question.question_text }}</strong>
+                <ul>
+                    {% for choice in question.choice_set.all %}
+                        <li>{{ choice.choice_text }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html> -->
